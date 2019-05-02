@@ -1,2 +1,2 @@
-# fastfeatureengineering
-simple feature engineering for baseline purposes
+# FastFeatureEngineering
+Simple feature engineering for baseline purposes
