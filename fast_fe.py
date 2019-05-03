@@ -32,13 +32,13 @@ def operation(res, a, b):
     return False
     
 
-def fast_fe(df, col_dict):
+def fast_fe(df, col_dict):    
     
-    features_dict = {}
+    features_list_arithmetic = []
     
     for operator, result in {'add':'sum', 'sub':'diff', 'div':'quo', 'mul':'prod', 'abs_diff':'abs_diff'}.items():
         
-        features_list = []
+        
         if(result in col_dict.keys()):
             col_list = col_dict[result]
         
@@ -47,54 +47,50 @@ def fast_fe(df, col_dict):
                 for col in range(2,len(l)):
                     total = operation(operator, total, df[l[col]]) 
                 df[result+'_'+'_'.join(l)] = total
-                features_list.append(result+'_'+'_'.join(l))
+                features_list_arithmetic.append(result+'_'+'_'.join(l))
                 
             
-            features_dict[result] = features_list
     
     
+    features_list_onehot = []
     
-#    
-#    features_list = []
-#    col_list = col_dict['sum']
-#
-#    for l in col_list:
-#        diff = df[l[0]] + df[l[1]]
-#        for col in range(2,len(l)):
-#            diff += df[l[col]]
-#        df['sum_'+'_'.join(l)] = diff
-#        features_list.append('sum_'+'_'.join(l))
-#        
-#    
-#    features_dict['sum'] = features_list
-#    
-#    
-#    features_list = []
-#    col_list = col_dict['div']
-#
-#    for l in col_list:
-#        diff = df[l[0]] / df[l[1]]
-#        for col in range(2,len(l)):
-#            diff /= df[l[col]]
-#        df['div_'+'_'.join(l)] = diff
-#        features_list.append('div_'+'_'.join(l))
-#        
-#    
-#    features_dict['div'] = features_list
-#    
+    for col in col_dict['onehot']:
+        labels = df[col].unique()
+        labels = labels[~pd.isnull(labels)]
+        
+        for l in labels:
+            features_list_onehot.append(col+'_'+str(l))
+            df[col+'_'+str(l)] = (df[col] == l).astype(int)
+            
+        if(df[col].isnull().values.any()):
+            df[col+'_'+'NaN'] = (df[col].isna()).astype(int)
+            features_list_onehot.append(col+'_'+'NaN')
+                
+            
     
+    
+    features_list_norm = []
+    
+    for col in col_dict['norm']:
+    
+    
+    features_dict = {}
+    features_dict['arithmetic'] = features_list_arithmetic
+    features_dict['onehot'] = features_list_onehot
+    
+    return df, features_dict
 
-        
-        
-        
 
-        
+    
 df = pd.DataFrame(pd.np.empty((10, 0)) * pd.np.nan)
 df['end_time'] = 50
 df['start_time'] = 20
+df.loc[0:3,'type'] = 'first'
+df.loc[3:8,'type'] = 'last'
 col_dict = {}
-col_dict['diff'] = [['end_time','start_time']]
+col_dict['diff'] = [['end_time','start_time'], ['start_time','end_time']]
 col_dict['sum'] = [['end_time','start_time']]
 col_dict['quo'] = [['end_time','start_time']]
 col_dict['prod'] = [['end_time','start_time']]
 col_dict['abs_diff'] = [['end_time','start_time']]
+col_dict['onehot'] = ['type']
