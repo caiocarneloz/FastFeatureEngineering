@@ -1,20 +1,4 @@
 import pandas as pd
-import numpy as np
-
-
-
-
-
-
-
-
-
-'diff'
-'abs_diff'
-'sum'
-'div'
-'onehot'
-'norm'
 
 def operation(res, a, b):
     
@@ -72,11 +56,13 @@ def fast_fe(df, col_dict):
     features_list_norm = []
     
     for col in col_dict['norm']:
-    
+        df['norm_'+col] = df[col]-df[col].mean()/df[col].std()
+        features_list_norm.append('norm_'+col)
     
     features_dict = {}
     features_dict['arithmetic'] = features_list_arithmetic
     features_dict['onehot'] = features_list_onehot
+    features_dict['normalized'] = features_list_norm
     
     return df, features_dict
 
@@ -87,6 +73,8 @@ df['end_time'] = 50
 df['start_time'] = 20
 df.loc[0:3,'type'] = 'first'
 df.loc[3:8,'type'] = 'last'
+df['size'] = range(0,10)
+
 col_dict = {}
 col_dict['diff'] = [['end_time','start_time'], ['start_time','end_time']]
 col_dict['sum'] = [['end_time','start_time']]
@@ -94,3 +82,4 @@ col_dict['quo'] = [['end_time','start_time']]
 col_dict['prod'] = [['end_time','start_time']]
 col_dict['abs_diff'] = [['end_time','start_time']]
 col_dict['onehot'] = ['type']
+col_dict['norm'] = ['size']

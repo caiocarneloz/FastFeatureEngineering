@@ -1,2 +1,2 @@
 # FastFeatureEngineering
-Simple feature engineering for baseline purposes
+Simple feature engineering using pandas for baseline purposes
