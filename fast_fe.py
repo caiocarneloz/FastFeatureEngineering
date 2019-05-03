@@ -77,9 +77,12 @@ df['size'] = range(0,10)
 
 col_dict = {}
 col_dict['diff'] = [['end_time','start_time'], ['start_time','end_time']]
-col_dict['sum'] = [['end_time','start_time']]
+col_dict['sum'] = [['end_time','start_time','size']]
 col_dict['quo'] = [['end_time','start_time']]
 col_dict['prod'] = [['end_time','start_time']]
 col_dict['abs_diff'] = [['end_time','start_time']]
 col_dict['onehot'] = ['type']
 col_dict['norm'] = ['size']
+
+df, features_dict = fast_fe(df, col_dict)
+print(df[features_dict['arithmetic'] + features_dict['onehot'] + features_dict['normalized']])
