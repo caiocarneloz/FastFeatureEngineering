@@ -35,13 +35,13 @@ The FastFeatureEngineering function takes as argument a dataframe containing the
 
 Arithmetic operations expects a list of lists, while onehot encoding and normalization expects a list.
 
-#### Example
+## Example
 Creating the dictionary to get:
 - A column with the difference between column_1 and column_2
 - Columns with the sum of column_1 and column_2, and column_1, column_2 and column_3
 - Columns representing the onehot encoding of column_4 and column_5
 - Columns with column_6 and column_7 normalized
-```
+```python
 op_dict = {}
 op_dict['diff'] = [['column_1', 'column2']]
 op_dict['sum'] = [['column_1', 'column_2'], ['column_1', 'column2', 'column_3']]
@@ -50,6 +50,8 @@ op_dict['norm'] = ['column_6', 'column_7']
 ```
 
 As output, the function returns the dataframe and a dictionary with the index for the new columns:
+
+DataFrame:
 ```
    column_1  column_2      ...        norm_column_6  norm_column_7
 0        10        10      ...             8.080363      16.480666
@@ -63,7 +65,7 @@ As output, the function returns the dataframe and a dictionary with the index fo
 8        10        10      ...            52.080363      36.480666
 9        10        10      ...            52.080363      36.480666
 ```
-
+Dictionary:
 ```
 {'arithmetic': 
 ['sum_column_1_column_2',
