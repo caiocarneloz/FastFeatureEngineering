@@ -26,10 +26,10 @@ git clone https://github.com/caiocarneloz/FastFeatureEngineering.git
 The FastFeatureEngineering function takes as argument a dataframe containing the data and a dictionary containing the desired output. The desired outputs are the dictionary keys while column names are the values. The possible outputs are represented by the following keys:
 
 - **sum** - to get the sum of a set of columns
-- **diff** - to get the difference of a set of columns
-- **quo** - to get de quotient of a set of of columns
-- **prod** - to get the product of a set of columns
-- **abs_diff** - to get the abs difference of a set of of columns
+- **diff** - to get the difference between columns
+- **quo** - to get de quotient between columns
+- **prod** - to get the product between columns
+- **abs_diff** - to get the abs difference between columns
 - **onehot** - to onehot encode a set of columns
 - **norm** - to normalize a set of columns
 
