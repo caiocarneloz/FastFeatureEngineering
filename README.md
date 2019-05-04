@@ -27,11 +27,11 @@ The FastFeatureEngineering function takes as argument a dataframe containing the
 
 - **sum** - to get the sum of a set of columns
 - **diff** - to get the difference of a set of columns
-- **quo** - to get de quotient of a list of columns
-- **prod** - to get the product of a list of columns
-- **abs_diff** - to get the abs difference of a list of columns
-- **onehot** - to onehot encode a list of columns
-- **norm** - to normalize a list of columns
+- **quo** - to get de quotient of a set of of columns
+- **prod** - to get the product of a set of columns
+- **abs_diff** - to get the abs difference of a set of of columns
+- **onehot** - to onehot encode a set of columns
+- **norm** - to normalize a set of columns
 
 Arithmetic operations expects a list of lists, while onehot encoding and normalization expects a list.
 
