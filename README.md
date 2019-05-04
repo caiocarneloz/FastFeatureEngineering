@@ -1,5 +1,5 @@
-# FastFeatureEngineering
-Simple feature engineering using pandas for baseline purposes
+# fastfe
+Fast feature engineering with simple operations using pandas for baseline purposes
 
 ## Getting Started
 #### Dependencies
