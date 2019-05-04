@@ -25,19 +25,18 @@ git clone https://github.com/caiocarneloz/FastFeatureEngineering.git
 ## Usage
 The FastFeatureEngineering function takes as argument a dataframe containing the data and a dictionary containing the desired output. The desired outputs are the dictionary keys while column names are the values. The possible outputs are represented by the following keys:
 
-- sum (to get the sum of a set of columns)
-- diff (to get the difference of a set of columns)
-- quo (to get de quotient of a list of columns)
-- prod (to get the product of a list of columns)
-- abs_diff (to get the abs difference of a list of columns)
-- onehot (to onehot encode a list of columns)
-- norm (to normalize a list of columns)
+- **sum** - to get the sum of a set of columns
+- **diff** - to get the difference of a set of columns
+- **quo** - to get de quotient of a list of columns
+- **prod** - to get the product of a list of columns
+- **abs_diff** - to get the abs difference of a list of columns
+- **onehot** - to onehot encode a list of columns
+- **norm** - to normalize a list of columns
 
 Arithmetic operations expects a list of lists, while onehot encoding and normalization expects a list.
 
 ## Example
-With the following dummy dataset
-
+With the following dummy dataset:
 ```
    column_1  column_2  column_3 column_4   column_5  column_6  column_7
 0      8.76      2.98      3.30    type1  category2      5.90      7.67
@@ -51,11 +50,11 @@ With the following dummy dataset
 8      3.73      6.83      4.27    type2  category2      9.88      4.01
 9      5.65      8.01      0.31    type1  category1      7.83      2.89
 ```
-We will create a dictionary to get:
-- A column with the difference between column_1 and column_2
-- Columns with the sum of column_1 and column_2, and column_1, column_2 and column_3
-- Columns representing the onehot encoding of column_4 and column_5
-- Columns with column_6 and column_7 normalized
+we gonna create a dictionary to get:
+- a column with the difference between column_1 and column_2
+- columns with the sum of column_1 and column_2, and column_1, column_2 and column_3
+- columns representing the onehot encoding of column_4 and column_5
+- columns with column_6 and column_7 normalized
 
 ```python
 op_dict = {}
@@ -64,7 +63,7 @@ op_dict['sum'] = [['column_1', 'column_2'], ['column_1', 'column2', 'column_3']]
 op_dict['onehot'] = ['column_4', 'column_5']
 op_dict['norm'] = ['column_6', 'column_7']
 ```
-As output, the function returns the dataframe and a dictionary with the index for the new columns:
+as output, the function returns the dataframe and a dictionary with the index for the new columns:
 ```
 df, features_dict = fast_fe(df, op_dict)
 ```
