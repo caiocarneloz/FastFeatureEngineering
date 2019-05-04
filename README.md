@@ -3,9 +3,9 @@ Simple feature engineering using pandas for baseline purposes
 
 ## Getting Started
 #### Dependencies
-You need Python 3.5 or later to use FastFeatureEngineering. You can find it at python.org.
+You need Python 3.5 or later to use FastFeatureEngineering. You can find it at [python.org](https://www.python.org/).
 
-You aso need the pandas package, which is available from PyPI. If you have pip, just run:
+You aso need the pandas package, which is available from [PyPI](https://pypi.org). If you have pip, just run:
 ```
 pip install pandas
 ```
@@ -80,4 +80,6 @@ As output, the function returns the dataframe and a dictionary with the index fo
  ['norm_column_6', 
  'norm_column_7']}
 ```
+
+
 
