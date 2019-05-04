@@ -65,7 +65,7 @@ op_dict['norm'] = ['column_6', 'column_7']
 ```
 as output, the function returns the dataframe and a dictionary with the index for the new columns:
 ```
-df, features_dict = fast_fe(df, op_dict)
+df, features_dict = fastfe(df, op_dict)
 ```
 df:
 ```
