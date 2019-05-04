@@ -30,9 +30,19 @@ The FastFeatureEngineering function takes as argument a dataframe containing the
 - quo (to get de quotient of a list of columns)
 - prod (to get the product of a list of columns)
 - abs_diff (to get the abs difference of a list of columns)
+- onehot (to onehot encode a list of columns)
+- norm (to normalize a list of columns)
 
-Creating the dictionary of operations:
+#### Example
+Creating the dictionary to get:
+- A column with the difference between column_1 and column_2
+- Columns with the sum of column_1 and column_2, and column_1, column_2 and column_3
+- Columns representing the onehot encoding of column_4 and column_5
+- Columns with column_6 and column_7 normalized
 ```
 op_dict = {}
-op_dict['diff'] = [['column_1', 'column2'], ['column_1', 'column3']]
+op_dict['diff'] = [['column_1', 'column2']]
+op_dict['sum'] = [['column_1', 'column_2'], ['column_1', 'column2', 'column_3']]
+op_dict['onehot'] = ['column_4', 'column_5']
+op_dict['norm'] = ['column_6', 'column_7']
 ```
