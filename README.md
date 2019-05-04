@@ -27,11 +27,11 @@ The FastFeatureEngineering function takes as argument a dataframe containing the
 
 - sum (to get the sum of a set of columns)
 - diff (to get the difference of a set of columns)
-- quo (to get a list of columns)
-- prod (to multiplicate a list of columns)
-- abs_diff (to subtract a list of columns)
-- Creating the dictionary of operations:
+- quo (to get de quotient of a list of columns)
+- prod (to get the product of a list of columns)
+- abs_diff (to get the abs difference of a list of columns)
 
+Creating the dictionary of operations:
 ```
 op_dict = {}
 op_dict['diff'] = [['column_1', 'column2'], ['column_1', 'column3']]
