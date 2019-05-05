@@ -3,7 +3,7 @@ Fast feature engineering with simple operations using pandas for baseline purpos
 
 ## Getting Started
 #### Dependencies
-You need Python 3.5 or later to use FastFeatureEngineering. You can find it at [python.org](https://www.python.org/).
+You need Python 3.5 or later to use fastfe. You can find it at [python.org](https://www.python.org/).
 
 You aso need the pandas package, which is available from [PyPI](https://pypi.org). If you have pip, just run:
 ```
@@ -12,7 +12,7 @@ pip install pandas
 #### Installation
 Clone this repo to your local machine using:
 ```
-git clone https://github.com/caiocarneloz/FastFeatureEngineering.git
+git clone https://github.com/caiocarneloz/fastfe.git
 ```
 
 ## Features
