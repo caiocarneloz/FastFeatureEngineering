@@ -3,7 +3,7 @@ Fast feature engineering with simple operations using pandas for baseline purpos
 
 ## Getting Started
 #### Dependencies
-You need Python 3.5 or later to use fastfe. You can find it at [python.org](https://www.python.org/).
+You need Python 3.5 or later to use **fastfe**. You can find it at [python.org](https://www.python.org/).
 
 You aso need the pandas package, which is available from [PyPI](https://pypi.org). If you have pip, just run:
 ```
@@ -23,7 +23,7 @@ git clone https://github.com/caiocarneloz/fastfe.git
 - Normalize columns
 
 ## Usage
-The fastfe function takes as argument a dataframe containing the data and a dictionary containing the desired output. The desired outputs are the dictionary keys while column names are the values. The possible outputs are represented by the following keys:
+The **fastfe** function takes as argument a dataframe containing the data and a dictionary containing the desired output. The desired outputs are the dictionary keys while column names are the values. The possible outputs are represented by the following keys:
 
 - **sum** - to get the sum of a set of columns
 - **diff** - to get the difference between columns
