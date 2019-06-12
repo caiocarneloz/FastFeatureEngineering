@@ -32,6 +32,7 @@ The **fastfe** function takes as argument a dataframe containing the data and a 
 - **abs_diff** - to get the abs difference between columns
 - **onehot** - to onehot encode a set of columns
 - **norm** - to normalize a set of columns
+~~- **date_eng** - to create features from dates~~
 
 Arithmetic operations expects a list of lists, while onehot encoding and normalization expects a list.
 
